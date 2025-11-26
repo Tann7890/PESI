@@ -1,0 +1,505 @@
+/* ========== ENERGY-EFFICIENT DARK MODE ========== */
+/* Menggunakan warna gelap untuk hemat energi OLED display */
+
+/* Mengatur font seluruh halaman menggunakan Poppins */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0D0D0D; /* Pure dark untuk OLED efficiency */
+  color: #E0E0E0; /* Low contrast text untuk hemat energi */
+}
+
+/* ========== SIDEBAR STYLING ========== */
+#sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 20px;
+  background-color: #121212; /* Dark background */
+  border-right: 1px solid #2a2a2a; /* Subtle border */
+}
+
+#sidebar .fs-4 {
+  color: #c88d5c;
+  font-weight: 600;
+}
+
+#sidebar hr {
+  border-color: #2a2a2a;
+  opacity: 0.5;
+}
+
+/* Styling untuk navigasi link */
+.nav-link {
+  color: #B0B0B0; /* Reduced brightness */
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.nav-link:hover {
+  background-color: #1e1e1e;
+  color: #c88d5c;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #c88d5c;
+  color: #0D0D0D; /* Dark text on accent color */
+}
+
+/* ========== CONTENT AREA ========== */
+#content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #0D0D0D;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  #sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  #content {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+}
+
+/* ========== BUTTON STYLING ========== */
+.btn-primary {
+  background-color: #c88d5c;
+  border-color: #bf792a;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 12px 30px;
+  color: #0D0D0D; /* Dark text for contrast */
+}
+
+.btn-primary:hover {
+  background-color: #a67548;
+  border-color: #8f5e35;
+  transform: scale(1.05);
+  color: #0D0D0D;
+}
+
+.btn-dark {
+  background-color: #1e1e1e;
+  color: #E0E0E0;
+  border: 1px solid #2a2a2a;
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #2a2a2a;
+  color: #c88d5c;
+}
+
+/* ========== HOME SECTION ========== */
+.home {
+  background: url('images/bg.webp');
+  background-repeat: no-repeat;
+  height: calc(100vh - 60px);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Dark overlay untuk mengurangi brightness */
+.home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 13, 13, 0.7); /* Dark overlay 70% */
+  pointer-events: none;
+}
+
+.home > div {
+  position: relative;
+  z-index: 1;
+  background: rgba(18, 18, 18, 0.95); /* Dark semi-transparent */
+  padding: 40px 50px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2a2a2a;
+}
+
+.home h1 {
+  color: #E0E0E0;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.home p {
+  color: #B0B0B0;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* ========== ANIME LIST SECTION ========== */
+.anime-list {
+  background-image: url('images/bg1.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 40px 30px;
+  border-radius: 8px;
+  min-height: calc(100vh - 60px);
+  position: relative;
+}
+
+/* Dark overlay pada anime list */
+.anime-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 13, 13, 0.6);
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.anime-list > * {
+  position: relative;
+  z-index: 1;
+}
+
+.anime-list h2 {
+  font-weight: 700;
+  color: #E0E0E0;
+  text-align: center;
+  margin-bottom: 30px;
+  background: rgba(18, 18, 18, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid #2a2a2a;
+}
+
+/* ========== CARD STYLING ========== */
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 250px;
+  background-color: rgba(18, 18, 18, 0.98);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(200, 141, 92, 0.2);
+  border-color: #c88d5c;
+}
+
+.card-img-left {
+  width: 40%;
+  object-fit: cover;
+  border-radius: 8px;
+  /* Image loading optimization akan ditambahkan di HTML */
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.card-body h5 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #E0E0E0;
+}
+
+.card-body p {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: #B0B0B0;
+  line-height: 1.6;
+}
+
+/* ========== LIST GROUP STYLING ========== */
+.list-group-item {
+  background-color: #1e1e1e;
+  color: #c88d5c;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #2a2a2a;
+  transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #2a2a2a;
+  border-color: #c88d5c;
+  color: #d4a574;
+}
+
+/* ========== COLLAPSE CONTENT ========== */
+.collapse {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid #2a2a2a;
+}
+
+.collapse img {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== MODAL STYLING ========== */
+.modal-content {
+  background-color: #121212;
+  color: #E0E0E0;
+  border-radius: 15px;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.modal-header {
+  border-bottom: 1px solid #2a2a2a;
+  background-color: #1e1e1e;
+  border-radius: 15px 15px 0 0;
+}
+
+.modal-title {
+  color: #E0E0E0;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 25px;
+  background-color: #121212;
+}
+
+.modal-body img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.modal-footer {
+  border-top: 1px solid #2a2a2a;
+  background-color: #1e1e1e;
+  border-radius: 0 0 15px 15px;
+}
+
+/* Button close di modal - dark mode friendly */
+.btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* ========== POPOVER STYLING ========== */
+.popover {
+  background-color: #1e1e1e !important;
+  border: 2px solid #c88d5c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.popover-header {
+  background-color: #c88d5c;
+  color: #0D0D0D;
+  font-weight: 600;
+  border-bottom: none;
+}
+
+.popover-body {
+  color: #B0B0B0;
+  background-color: #1e1e1e;
+}
+
+.popover-arrow::after {
+  border-right-color: #c88d5c !important;
+}
+
+/* ========== ABOUT SECTION ========== */
+#about {
+  background: url('images/bg2.webp');
+  background-repeat: no-repeat;
+  height: calc(100vh - 60px);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Dark overlay on about section */
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 13, 13, 0.7);
+  pointer-events: none;
+}
+
+.text-background {
+  background-color: rgba(18, 18, 18, 0.95);
+  text-align: center;
+  max-width: 800px;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid #2a2a2a;
+  position: relative;
+  z-index: 1;
+}
+
+.text-background h2 {
+  color: #E0E0E0;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.text-background p {
+  color: #B0B0B0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* ========== FOOTER STYLING ========== */
+footer {
+  background-color: #121212 !important;
+  border-top: 1px solid #2a2a2a;
+  margin-top: auto;
+  padding: 15px !important;
+}
+
+footer p {
+  color: #808080;
+  font-size: 0.9rem;
+}
+
+/* ========== UTILITY CLASSES - DARK MODE OVERRIDE ========== */
+.text-white {
+  color: #E0E0E0 !important;
+}
+
+.bg-dark {
+  background-color: #121212 !important;
+}
+
+.bg-light {
+  background-color: #1e1e1e !important;
+}
+
+.text-light {
+  color: #E0E0E0 !important;
+}
+
+/* Character items styling */
+.character {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 5px;
+  background-color: #1e1e1e;
+  color: #B0B0B0;
+  border: 1px solid #2a2a2a;
+}
+
+.character:hover {
+  background-color: #2a2a2a;
+  color: #c88d5c;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(200, 141, 92, 0.3);
+}
+
+/* Image styling untuk karakter */
+.character-img {
+  display: none;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* ========== PERFORMANCE OPTIMIZATIONS ========== */
+/* Reduce animation for better performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Image optimization classes */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Prevent layout shift */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: 'Poppins';
+  font-display: swap; /* Prevent invisible text during font loading */
+}
+
+/* Styling untuk Search Bar */
+#animeSearch {
+  background-color: #c88d5cb3; /* Background gelap, senada dengan list-group-item */
+  color: #ffffff; /* Warna teks yang kontras (seperti warna aktif/hover di website Anda) */
+  border: 1px solid #000000; /* Border dengan warna aksen */
+  border-radius: 8px; /* Sudut membulat */
+  padding: 10px 15px; /* Padding di dalam input */
+  transition: all 0.3s ease; /* Transisi agar efek hover lebih halus */
+}
+
+/* Styling untuk Placeholder (Teks 'Cari anime...') */
+#animeSearch::placeholder {
+  color: #ffffff; /* Warna placeholder yang lebih redup */
+  opacity: 1; /* Pastikan opacity penuh */
+}
+
+/* Styling saat Search Bar difokuskan (diklik) */
+#animeSearch:focus {
+  background-color: #333; /* Warna sedikit lebih terang saat fokus */
+  border-color: #fff; /* Border berubah menjadi putih saat fokus */
+  box-shadow: 0 0 0 0.25rem rgba(200, 141, 92, 0.5); /* Efek glow ringan */
+  color: #fff; /* Teks menjadi putih terang saat fokus */
+}
+

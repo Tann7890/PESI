@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id"> <!-- Menentukan bahasa halaman web sebagai Bahasa Indonesia -->
+<head>
+  <meta charset="UTF-8"> <!-- Menentukan karakter encoding sebagai UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Membuat tampilan responsif pada perangkat mobile -->
+  <title>Home - InfoAnime</title> <!-- Judul halaman yang ditampilkan di tab browser -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Import CSS Bootstrap dari CDN untuk styling cepat dan responsif -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Import font Poppins dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Link ke file CSS lokal untuk styling kustom -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Theme color for dark mode -->
+  <meta name="theme-color" content="#0D0D0D">
+</head>
+
+<body class="d-flex"> <!-- Mengatur tubuh halaman menjadi elemen fleksibel -->
+
+<!-- Sidebar -->
+<nav id="sidebar" class="d-flex flex-column p-3 bg-dark text-white"> <!-- Sidebar dengan kelas Bootstrap untuk tampilan vertikal dengan warna latar gelap -->
+  <a href="#" class="mb-3 text-white text-decoration-none"> <!-- Link yang menuju ke halaman utama, tanpa garis bawah -->
+    <span class="fs-4">InfoAnime</span> <!-- Nama website dengan ukuran font 4 -->
+  </a>
+  <hr> <!-- Garis pemisah -->
+  <ul class="nav nav-pills flex-column"> <!-- Daftar navigasi dengan gaya pill dan orientasi vertikal -->
+    <li class="nav-item"><a href="index.html" class="nav-link text-white">Home</a></li> <!-- Menu Home -->
+    <li><a href="anime-list.html" class="nav-link text-white active">Anime List</a></li> <!-- Menu Anime List dengan kelas active -->
+    <li><a href="about.html" class="nav-link text-white">About</a></li> <!-- Menu About -->
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<div id="content"> <!-- Bagian konten utama -->
+
+  <!-- Section Anime List -->
+  <section id="anime-list" class="anime-list py-5">
+    <div class="row mb-4">
+    <div class="col-12">
+        <input type="text" id="animeSearch" class="form-control" placeholder="Cari anime (maks. 50 karakter)...">
+        </div>
+    </div>
+ <!-- Bagian daftar anime dengan padding vertikal 5 -->
+    <h2 class="text-center mb-4">·─ ·𖥸· ─·Anime List·─ ·𖥸· ─·</h2> <!-- Judul anime list dengan format teks center dan margin bawah -->
+    <div class="row g-4"> <!-- Baris dengan jarak antar elemen grid sebesar 4 -->
+
+      <!-- Card 1 -->
+      <div class="col-md-6"> <!-- Kolom dengan lebar 6 pada perangkat medium dan lebih besar -->
+        <div class="card flex-row"> <!-- Kartu dengan layout fleksibel horizontal -->
+          <img data-src="images/aot.webp" 
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+            class="card-img-left" 
+            alt="Attack on Titan"
+            loading="lazy"
+            width="300"
+            height="450"> <!-- Gambar anime Attack on Titan di kiri -->
+          <div class="card-body d-flex flex-column"> <!-- Isi kartu dengan layout kolom fleksibel -->
+            <h5 class="card-title">Attack on Titan</h5> <!-- Judul anime -->
+            <!-- Deskripsi anime -->
+            <p class="card-text">Di dunia yang dikuasai oleh raksasa pemakan manusia, umat manusia bertahan hidup di balik tembok besar. Eren Yeager bersumpah untuk memusnahkan semua Titan setelah menyaksikan kehancuran kota dan kematian ibunya. Namun, ia segera mengetahui bahwa dunia luar menyimpan rahasia yang jauh lebih gelap dari yang ia bayangkan.</p>
+            <!-- Tombol untuk membuka modal dengan daftar karakter -->
+            <button class="btn btn-dark mt-auto" data-bs-toggle="modal" data-bs-target="#modalAOT">Lihat Karakter</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6">
+        <div class="card flex-row">
+          <img data-src="images/ds.webp" 
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+            class="card-img-left" 
+            alt="Demon Slayer"
+            loading="lazy"
+            width="300"
+            height="450">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Demon Slayer</h5>
+            <p class="card-text">Tanjiro Kamado, seorang remaja baik hati, menjadi pembasmi iblis setelah keluarganya dibantai dan adik perempuannya, Nezuko, berubah menjadi iblis. Ia bergabung dengan Korps Pembasmi Iblis untuk mencari cara mengembalikan Nezuko menjadi manusia dan membalas dendam pada iblis yang bertanggung jawab.</p>
+            <button class="btn btn-dark mt-auto" data-bs-toggle="modal" data-bs-target="#modalDemonSlayer">Lihat Karakter</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6">
+        <div class="card flex-row">
+          <img data-src="images/jjk.webp" 
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+            class="card-img-left" 
+            alt="Jujutsu Kaisen"
+            loading="lazy"
+            width="300"
+            height="450">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Jujutsu Kaisen</h5>
+            <p class="card-text">Yuji Itadori, seorang siswa SMA yang memiliki kekuatan fisik luar biasa, terjerat dunia kutukan setelah menelan jari makhluk kutukan legendaris bernama Sukuna. Ia bergabung dengan sekolah Jujutsu untuk memburu kutukan lainnya dan menunda kematian yang telah ditetapkan padanya.</p>
+            <button class="btn btn-dark mt-auto" data-bs-toggle="modal" data-bs-target="#modalJujutsuKaisen">Lihat Karakter</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6">
+        <div class="card flex-row">
+          <img data-src="images/hxh.webp" 
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+            class="card-img-left" 
+            alt="Hunter x Hunter"
+            loading="lazy"
+            width="300"
+            height="450">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Hunter x Hunter</h5>
+            <p class="card-text">Gon Freecss bercita-cita menjadi Hunter seperti ayahnya yang hilang, seorang petualang elit dengan berbagai keahlian. Dalam perjalanannya, ia bertemu teman-teman baru dan menghadapi ujian, pertarungan, serta misteri yang menguji kekuatan, kecerdasan, dan moralitasnya.</p>
+            <button class="btn btn-dark mt-auto" data-bs-toggle="modal" data-bs-target="#modalHunterXHunter">Lihat Karakter</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-6">
+        <div class="card flex-row">
+          <img data-src="images/bleach.webp" 
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+            class="card-img-left" 
+            alt="Bleach"
+            loading="lazy"
+            width="300"
+            height="450">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Bleach</h5>
+            <p class="card-text">Ichigo Kurosaki, remaja yang bisa melihat roh, tak sengaja mendapatkan kekuatan sebagai Shinigami (Dewa Kematian). Ia harus melindungi dunia manusia dari roh jahat bernama Hollow, sembari mengungkap rahasia besar tentang dirinya dan dunia roh.</p>
+            <button class="btn btn-dark mt-auto" data-bs-toggle="modal" data-bs-target="#modalBleach">Lihat Karakter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-3 bg-light">
+    <p class="mb-0">&copy; InfoAnime by Tanesha. Created with Bootstrap.</p>
+  </footer>
+
+</div>
+
+<!-- Modal untuk setiap anime -->
+
+<!-- Modal AOT -->
+<div class="modal fade" id="modalAOT" tabindex="-1" aria-labelledby="modalAOTLabel" aria-hidden="true">
+  <!-- Modal utama dengan efek fade dan ID untuk referensi JS/HTML lainnya -->
+  
+  <div class="modal-dialog">
+    <!-- Kontainer dialog modal -->
+    
+    <div class="modal-content">
+      <!-- Konten utama modal -->
+
+      <div class="modal-header">
+        <!-- Header modal -->
+        <h5 class="modal-title" id="modalAOTLabel">Karakter Attack on Titan</h5>
+        <!-- Judul modal dengan ID untuk label ARIA -->
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <!-- Tombol untuk menutup modal -->
+      </div>
+
+      <div class="modal-body">
+        <!-- Isi utama modal -->
+
+        <ul class="list-group">
+          <!-- Daftar karakter dengan Bootstrap list-group -->
+
+          <li class="list-group-item character"
+              data-img="images/eren.webp"
+              data-bs-toggle="popover"
+              data-bs-title="Eren Yeager"
+              data-bs-content="Karakter utama, pejuang kebebasan.">
+            Eren Yeager
+          </li>
+          <!-- akan menampilkan popover saat di-hover atau klik, dan menyimpan gambar di atribut data-img -->
+
+          <li class="list-group-item character"
+              data-img="images/mikasa.webp"
+              data-bs-toggle="popover"
+              data-bs-title="Mikasa Ackerman"
+              data-bs-content="Sahabat setia Eren, ahli bertarung.">
+            Mikasa Ackerman
+          </li>
+
+          <li class="list-group-item character"
+              data-img="images/levi.webp"
+              data-bs-toggle="popover"
+              data-bs-title="Levi Ackerman"
+              data-bs-content="Kapten pasukan pengintai terbaik.">
+            Levi Ackerman
+          </li>
+
+        </ul>
+
+        <img id="imgAOT" class="character-img">
+        <!-- Gambar karakter yang akan berubah sesuai item list yang dipilih -->
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Jujutsu Kaisen -->
+<div class="modal fade" id="modalJujutsuKaisen" tabindex="-1" aria-labelledby="modalJujutsuKaisenLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalJujutsuKaisenLabel">Karakter Jujutsu Kaisen</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item character" data-img="images/yuji.webp" data-bs-toggle="popover" data-bs-title="Yuji Itadori" data-bs-content="Protagonis kuat dengan kekuatan Sukuna.">Yuji Itadori</li>
+          <li class="list-group-item character" data-img="images/gojo.webp" data-bs-toggle="popover" data-bs-title="Satoru Gojo" data-bs-content="Guru terkuat dengan teknik ruang tak terbatas.">Satoru Gojo</li>
+          <li class="list-group-item character" data-img="images/megumi.webp" data-bs-toggle="popover" data-bs-title="Megumi Fushiguro" data-bs-content="Pengguna shikigami berbakat.">Megumi Fushiguro</li>
+        </ul>
+        <img id="imgJujutsu" class="character-img">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Demon Slayer -->
+<div class="modal fade" id="modalDemonSlayer" tabindex="-1" aria-labelledby="modalDemonSlayerLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalDemonSlayerLabel">Karakter Demon Slayer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item character" data-img="images/tanjiro.webp" data-bs-toggle="popover" data-bs-title="Tanjiro Kamado" data-bs-content="Pembasmi iblis dengan jurus napas air.">Tanjiro Kamado</li>
+          <li class="list-group-item character" data-img="images/nezuko.webp" data-bs-toggle="popover" data-bs-title="Nezuko Kamado" data-bs-content="Adik Tanjiro yang menjadi iblis baik.">Nezuko Kamado</li>
+          <li class="list-group-item character" data-img="images/zenitsu.webp" data-bs-toggle="popover" data-bs-title="Zenitsu Agatsuma" data-bs-content="Petarung dengan kecepatan kilat.">Zenitsu Agatsuma</li>
+        </ul>
+        <img id="imgDemon" class="character-img">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Hunter x Hunter -->
+<div class="modal fade" id="modalHunterXHunter" tabindex="-1" aria-labelledby="modalHunterXHunterLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalHunterXHunterLabel">Karakter Hunter x Hunter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item character" data-img="images/gon.webp" data-bs-toggle="popover" data-bs-title="Gon Freecss" data-bs-content="Anak muda dengan kekuatan luar biasa.">Gon Freecss</li>
+          <li class="list-group-item character" data-img="images/killua.webp" data-bs-toggle="popover" data-bs-title="Killua Zoldyck" data-bs-content="Pembunuh muda dari keluarga Zoldyck.">Killua Zoldyck</li>
+          <li class="list-group-item character" data-img="images/kurapika.webp" data-bs-toggle="popover" data-bs-title="Kurapika" data-bs-content="Pembalas dendam klan Kurta.">Kurapika</li>
+        </ul>
+        <img id="imgHunter" class="character-img">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Bleach -->
+<div class="modal fade" id="modalBleach" tabindex="-1" aria-labelledby="modalBleachLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalBleachLabel">Karakter Bleach</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item character" data-img="images/ichigo.webp" data-bs-toggle="popover" data-bs-title="Ichigo Kurosaki" data-bs-content="Pengguna kekuatan shinigami.">Ichigo Kurosaki</li>
+          <li class="list-group-item character" data-img="images/rukia.webp" data-bs-toggle="popover" data-bs-title="Rukia Kuchiki" data-bs-content="Shinigami yang membimbing Ichigo.">Rukia Kuchiki</li>
+          <li class="list-group-item character" data-img="images/renji.webp" data-bs-toggle="popover" data-bs-title="Renji Abarai" data-bs-content="Wakil kapten dengan pedang kuat.">Renji Abarai</li>
+        </ul>
+        <img id="imgBleach" class="character-img">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Bootstrap untuk JS-->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+ <!-- Custom Script -->
+ <script src="script.js"></script> <!-- Memuat script kustom -->
+</body>
+</html>
