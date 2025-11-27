@@ -71,14 +71,6 @@ function initSearchValidation() {
             // Tambahkan Pemicu Filtering di dalam event listener 'input' (Line ~58)
             searchInput.addEventListener('input', function() {
                 let value = this.value;
-
-                // 1. Logika Pembatasan Karakter
-                // ... (kode pembatasan karakter) ...
-
-                // 2. Logika Penghapusan Karakter Khusus
-                // ... (kode sanitasi karakter) ...
-                
-                // PANGGIL FUNGSI FILTERING DI SINI
                 filterAnimeList(this.value); 
             });
 
@@ -356,3 +348,4 @@ window.exportPerformanceReport = function() {
 
 // Log instruction for users
 console.log('📊 To export performance report, run: exportPerformanceReport()')
+
